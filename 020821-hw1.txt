@@ -1,0 +1,193 @@
+uname -a
+
+	NetBSD ip-172-31-25-28.ec2.internal 9.99.78 NetBSD 9.99.78 (GENERIC) #0: Fri Jan 22 00:44:55 UTC 2021  mkrepro@mkrepro.NetBSD.org:/usr/src/sys/arch/amd64/compile/GENERIC amd64
+
+whoami
+
+	root
+
+date
+
+	Sun Feb  7 21:48:24 UTC 2021
+
+w
+
+	 9:48PM  up 36 mins, 1 user, load averages: 0.00, 0.00, 0.00
+	USER     TTY     FROM                                LOGIN@  IDLE WHAT
+	root     pts/0   pool-108-50-205-195.nwrknj.fios.ve  9:46PM     0 w 
+
+ifconfig -a
+
+	xennet0: flags=0x8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+        capabilities=0x17c00<TCP4CSUM_Rx,TCP4CSUM_Tx,UDP4CSUM_Rx,UDP4CSUM_Tx>
+        capabilities=0x17c00<TCP6CSUM_Rx,UDP6CSUM_Rx>
+        enabled=0
+        ec_capabilities=0x5<VLAN_MTU,JUMBO_MTU>
+        ec_enabled=0
+        address: 0a:0c:eb:e2:36:19
+        inet 172.31.25.28/20 broadcast 172.31.31.255 flags 0
+        inet6 fe80::812f:7b2b:7048:96fb%xennet0/64 flags 0 scopeid 0x1
+	lo0: flags=0x8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 33624
+        status: active
+        inet 127.0.0.1/8 flags 0
+        inet6 ::1/128 flags 0x20<NODAD>
+        inet6 fe80::1%lo0/64 flags 0 scopeid 0x2
+
+netstat -na
+
+	Active Internet connections (including servers)
+	Proto Recv-Q Send-Q  Local Address          Foreign Address        State
+	tcp        0     36  172.31.25.28.22        108.50.205.195.54376   ESTABLISHED
+	tcp        0      0  *.22                   *.*                    LISTEN
+	udp        0      0  *.68                   *.*                   
+	udp        0      0  *.*                    *.*                   
+	Active Internet6 connections (including servers)
+	Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)
+	tcp6       0      0  *.22                   *.*                    LISTEN
+	udp6       0      0  *.546                  *.*                   
+	udp6       0      0  *.*                    *.*                   
+	Active UNIX domain sockets
+	Address  Type   Recv-Q Send-Q    Inode     Conn     Refs  Nextref Addr
+	ffffef9d0d7aa040 stream      0      0        0 ffffef9d0b823f40        0        0 
+	ffffef9d0b823f40 stream      0      0        0 ffffef9d0d7aa040        0        0 
+	ffffef9d0b823d00 stream      0      0        0 ffffef9d0b823c40        0        0 
+	ffffef9d0b823c40 stream      0      0        0 ffffef9d0b823d00        0        0 
+	ffffef9d0b823ac0 stream      0      0 ffffef9d13e48d40        0        0        0 private/scache
+	ffffef9d0b823a00 stream      0      0        0 ffffef9d0b823940        0        0 
+	ffffef9d0b823940 stream      0      0        0 ffffef9d0b823a00        0        0 
+	ffffef9d0b8237c0 stream      0      0 ffffef9d13e48ac0        0        0        0 private/anvil
+	ffffef9d0b823700 stream      0      0        0 ffffef9d0b823640        0        0 
+	ffffef9d0b823640 stream      0      0        0 ffffef9d0b823700        0        0 
+	ffffef9d0b8234c0 stream      0      0 ffffef9d13e48840        0        0        0 private/lmtp
+	ffffef9d0b823400 stream      0      0        0 ffffef9d0b823340        0        0 
+	ffffef9d0b823340 stream      0      0        0 ffffef9d0b823400        0        0 
+	ffffef9d0b8231c0 stream      0      0 ffffef9d13e485c0        0        0        0 private/virtual
+	ffffef9d0b823100 stream      0      0        0 ffffef9d0b823040        0        0 
+	ffffef9d0b823040 stream      0      0        0 ffffef9d0b823100        0        0 
+	ffffef9d0b0c4e80 stream      0      0 ffffef9d13e48340        0        0        0 private/local
+	ffffef9d0b0c4dc0 stream      0      0        0 ffffef9d0b0c4d00        0        0 
+	ffffef9d0b0c4d00 stream      0      0        0 ffffef9d0b0c4dc0        0        0 
+	ffffef9d0b0c4b80 stream      0      0 ffffef9d13e480c0        0        0        0 private/discard
+	ffffef9d0b0c4ac0 stream      0      0        0 ffffef9d0b0c4a00        0        0 
+	ffffef9d0b0c4a00 stream      0      0        0 ffffef9d0b0c4ac0        0        0 
+	ffffef9d0b0c4880 stream      0      0 ffffef9d12571d00        0        0        0 private/retry
+	ffffef9d0b0c47c0 stream      0      0        0 ffffef9d0b0c4700        0        0 
+	ffffef9d0b0c4700 stream      0      0        0 ffffef9d0b0c47c0        0        0 
+	ffffef9d0b0c4580 stream      0      0 ffffef9d12571a80        0        0        0 private/error
+	ffffef9d0b0c44c0 stream      0      0        0 ffffef9d0b0c4400        0        0 
+	ffffef9d0b0c4400 stream      0      0        0 ffffef9d0b0c44c0        0        0 
+	ffffef9d0b0c4280 stream      0      0 ffffef9d12571800        0        0        0 public/showq
+	ffffef9d0b0c41c0 stream      0      0        0 ffffef9d0b0c4100        0        0 
+	ffffef9d0b0c4100 stream      0      0        0 ffffef9d0b0c41c0        0        0 
+	ffffef9d0aa7cf40 stream      0      0 ffffef9d12571580        0        0        0 private/relay
+	ffffef9d0aa7ce80 stream      0      0        0 ffffef9d0aa7cdc0        0        0 
+	ffffef9d0aa7cdc0 stream      0      0        0 ffffef9d0aa7ce80        0        0 
+	ffffef9d0aa7cc40 stream      0      0 ffffef9d12571300        0        0        0 private/smtp
+	ffffef9d0aa7cb80 stream      0      0        0 ffffef9d0aa7cac0        0        0 
+	ffffef9d0aa7cac0 stream      0      0        0 ffffef9d0aa7cb80        0        0 
+	ffffef9d089267c0 stream      0      0 ffffef9d12571080        0        0        0 private/proxywrite
+	ffffef9d0498d100 stream      0      0        0 ffffef9d08aade80        0        0 
+	ffffef9d08aade80 stream      0      0        0 ffffef9d0498d100        0        0 
+	ffffef9d08aad880 stream      0      0 ffffef9d0b7a3cc0        0        0        0 private/proxymap
+	ffffef9d09723f40 stream      0      0        0 ffffef9d0d46a580        0        0 
+	ffffef9d0d46a580 stream      0      0        0 ffffef9d09723f40        0        0 
+	ffffef9d0d46ae80 stream      0      0 ffffef9d0b7a3a40        0        0        0 public/flush
+	ffffef9d09723c40 stream      0      0        0 ffffef9d0d46ac40        0        0 
+	ffffef9d0d46ac40 stream      0      0        0 ffffef9d09723c40        0        0 
+	ffffef9d0d46aac0 stream      0      0 ffffef9d0b7a37c0        0        0        0 private/verify
+	ffffef9d0d46a640 stream      0      0        0 ffffef9d096db340        0        0 
+	ffffef9d0498d400 stream      0      0 ffffef9d0b7a3540        0        0        0 private/trace
+	ffffef9d0d46a040 stream      0      0        0 ffffef9d0d46adc0        0        0 
+	ffffef9d0d46adc0 stream      0      0        0 ffffef9d0d46a040        0        0 
+	ffffef9d09723580 stream      0      0 ffffef9d0b7a32c0        0        0        0 private/defer
+	ffffef9d08926580 stream      0      0        0 ffffef9d08aad280        0        0 
+	ffffef9d08aad280 stream      0      0        0 ffffef9d08926580        0        0 
+	ffffef9d0aa7c1c0 stream      0      0 ffffef9d0b7a3040        0        0        0 private/bounce
+	ffffef9d08aad100 stream      0      0        0 ffffef9d0d46a940        0        0 
+	ffffef9d0d46a940 stream      0      0        0 ffffef9d08aad100        0        0 
+	ffffef9d0f871f40 stream      0      0 ffffef9d0d6d2d80        0        0        0 private/rewrite
+	ffffef9d0aa7c640 stream      0      0        0 ffffef9d0d46a1c0        0        0 
+	ffffef9d0d46a1c0 stream      0      0        0 ffffef9d0aa7c640        0        0 
+	ffffef9d08aaddc0 stream      0      0 ffffef9d0d6d2b00        0        0        0 private/tlsmgr
+	ffffef9d09723d00 stream      0      0        0 ffffef9d097237c0        0        0 
+	ffffef9d097237c0 stream      0      0        0 ffffef9d09723d00        0        0 
+	ffffef9d08926400 stream      0      0 ffffef9d0d6d2880        0        0        0 public/qmgr
+	ffffef9d08926700 stream      0      0        0 ffffef9d05189340        0        0 
+	ffffef9d05189340 stream      0      0        0 ffffef9d08926700        0        0 
+	ffffef9d0d46a340 stream      0      0 ffffef9d0d6d2600        0        0        0 public/cleanup
+	ffffef9d0d46a280 stream      0      0        0 ffffef9d0d46a880        0        0 
+	ffffef9d0d46a880 stream      0      0        0 ffffef9d0d46a280        0        0 
+	ffffef9d08926f40 stream      0      0 ffffef9d0d6d2380        0        0        0 public/pickup
+	ffffef9d096db340 stream      0      0        0 ffffef9d0d46a640        0        0 
+	ffffef9d09723400 stream      0      0        0        0        0        0 
+	ffffef9d0425ce80 stream      0      0 ffffef9d04226b00        0        0        0 /var/run/dhcpcd/unpriv.sock
+	ffffef9d0425cdc0 stream      0      0 ffffef9d04226600        0        0        0 /var/run/dhcpcd/sock
+	ffffef9d0404db80 stream      0      0        0 ffffef9d0404dac0        0        0 
+	ffffef9d0404dac0 stream      0      0        0 ffffef9d0404db80        0        0 
+	ffffef9d0404da00 stream      0      0        0 ffffef9d0404d940        0        0 
+	ffffef9d0404d940 stream      0      0        0 ffffef9d0404da00        0        0 
+	ffffef9d0d7aa280 dgram       0      0        0 ffffef9d04948040        0 ffffef9d04fba700 -> /var/run/log
+	ffffef9d0b823dc0 dgram       0      0 ffffef9d0b83b100        0        0        0 public/postlog
+	ffffef9d04fba040 dgram       0      0        0        0        0        0 
+	ffffef9d04fba700 dgram       0      0        0 ffffef9d04948040        0 ffffef9d08926880 -> /var/run/log
+	ffffef9d08926880 dgram       0      0        0 ffffef9d04948040        0 ffffef9d03ec2100 -> /var/run/log
+	ffffef9d03ec2100 dgram       0      0        0 ffffef9d04948040        0 ffffef9d0498db80 -> /var/run/log
+	ffffef9d03cbe580 dgram       0      0        0 ffffef9d04948040        0 ffffef9d0d7aa280 -> /var/run/log
+	ffffef9d0498db80 dgram       0      0        0 ffffef9d04948040        0        0 -> /var/run/log
+	ffffef9d0404dd00 dgram       0      0        0 ffffef9d0404dc40 ffffef9d0404dc40        0 
+	ffffef9d0404dc40 dgram       0      0        0 ffffef9d0404dd00 ffffef9d0404dd00        0 
+	ffffef9d03d511c0 dgram       0      0        0 ffffef9d04538d00 ffffef9d04538d00        0 
+	ffffef9d04538d00 dgram       0      0        0 ffffef9d03d511c0 ffffef9d03d511c0        0 
+	ffffef9d03d0dc40 dgram       0      0        0 ffffef9d03d0db80 ffffef9d03d0db80        0 
+	ffffef9d03d0db80 dgram       0      0        0 ffffef9d03d0dc40 ffffef9d03d0dc40        0 
+	ffffef9d03ec2880 dgram       0      0        0 ffffef9d03ec2f40 ffffef9d03ec2f40        0 
+	ffffef9d03ec2f40 dgram       0      0        0 ffffef9d03ec2880 ffffef9d03ec2880        0 
+	ffffef9d03cbeac0 dgram       0      0        0 ffffef9d03d514c0 ffffef9d03d514c0        0 
+	ffffef9d03f7bac0 dgram       0      0        0        0        0        0 
+	ffffef9d04948040 dgram       0      0 ffffef9d052f9a40        0 ffffef9d03cbe580        0 /var/run/log
+        ffffef9d03d514c0 dgram       0      0        0 ffffef9d03cbeac0 ffffef9d03cbeac0        0 
+	ffffef9d04fbae80 dgram       0      0        0        0        0        0 
+
+fdisk (display partition table)
+	Disk: /dev/rxbd0
+	NetBSD disklabel disk geometry:
+	cylinders: 10240, heads: 1, sectors/track: 2048 (2048 sectors/cylinder)
+	total sectors: 20971520, bytes/sector: 512
+
+	BIOS disk geometry:
+	cylinders: 1023, heads: 255, sectors/track: 63 (16065 sectors/cylinder)
+	total sectors: 20971520
+
+	Partitions aligned to 2048 sector boundaries, offset 2048
+
+	Partition table:
+	0: NetBSD (sysid 169)
+		start 2048, size 3903488 (1906 MB, Cyls 0-243/27/40), Active
+	1: <UNUSED>
+	2: <UNUSED>
+	3: <UNUSED>
+	Bootselector disabled.
+	First active partition: 0
+	Drive serial number: 0 (0x00000000)
+
+	The disk is divided into a single partition, which contains the NetBSD OS, and only uses a fraction of the _total available size shown in total sectors._ not sure
+
+df
+	Filesystem      1K-blocks         Used        Avail %Cap Mounted on
+	/dev/xbd0a       10318062      1226112      8576048  12% /
+	ptyfs                   1            1            0 100% /dev/pts
+
+
+df -m (display currently mounted file systems and available disk space)
+	Filesystem   1M-blocks      Used     Avail %Cap Mounted on
+	/dev/xbd0a       10076      1197      8375  12% /
+	ptyfs                0         0         0 100% /dev/pts
+
+	-m display the sizes of disks as megabytes. df is the command for displaying free space, and displays all mounted file systems if no arguments are supplied.
+
+
+Fill disk space + results observations
+
+dd 
+
+Used up all inodes + results observations
