@@ -148,6 +148,7 @@ netstat -na
         ffffef9d03d514c0 dgram       0      0        0 ffffef9d03cbeac0 ffffef9d03cbeac0        0 
 	ffffef9d04fbae80 dgram       0      0        0        0        0        0 
 
+DISPLAY PARTITION TABLE, CURRENTLY MOUNTED FILESYSTEMS, AND DISK SPACE
 fdisk (display partition table)
 	Disk: /dev/rxbd0
 	NetBSD disklabel disk geometry:
@@ -179,8 +180,7 @@ df
 
 	>df is the command for displaying free space, and displays all mounted file systems if no arguments are supplied.
 
-
-Fill disk space + results observations
+FILL UP DISK SPACE
 
 dd if=/dev/zero of=trashfile bs=$((1024*1024)) count=$((9*1024))
 	if - input file
@@ -207,8 +207,9 @@ ls -ls
 	9090240 -rw-r--r--  1 root  wheel  9306112000 Feb  7 22:31 trash
 
 	>That's a big file.
+	> Without hard drive space, I can still log into the instance, but my session isn't recorded in any log files since appending to them requires some space, and I can create empty files, but only if they're empty and they're just pointing to a file that exists.
 
-Clear some space, use up all inodes + results observations
+CLEAR SOME SPACE, USE UP ALL INODES + RESULTS OBSERVATIONS
 
 rm trash
 	>delete the file taking up the entire disk
@@ -229,9 +230,9 @@ dd if=/dev/zero of=master bs=1 count=1280770
 split -b 1 -a 10 master
 
 	>this takes ages too...
-	starting out i had 1280766 available inodes
-	after over 6 hours, i still have 885674 left
-	i even got "mail" during that time
+	>starting out i had 1280766 available inodes
+	>after over 6 hours, i still have 885674 left
+	>i even got "mail" during that time
 		"/var/mail/root": 2 messages 2 new
 		>N  1 root@ip-172-31-25-28  Mon Feb  8 04:19 58043/4075180 "ip-172-31-25-28.ec2.internal daily insecurity output for Mon Feb  8 04:15
 		N  2 root@ip-172-31-25-28  Mon Feb  8 04:19  20/1049  "ip-172-31-25-28.ec2.internal daily output for Mon Feb  8 04:15:17 UTC 2021"
@@ -240,4 +241,5 @@ cp -r trash trash2
 
 	>going to try to just cp the files that i have for now, but at 18k inodes every minute it's going to take just as long to fill the remaining 870859 inodes...
 	>using tmux in conjunction with cp only made it even slower
-	
+
+	>Ultimately, I haven't filled up all of the inodes, but what I can guess is that without any free inodes, I won't be able to download any new files or create any new files, directories, or file links. I'd still be able to edit file contents though, since the contents don't use up inodes, only new files do.
