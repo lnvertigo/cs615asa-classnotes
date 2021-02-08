@@ -188,6 +188,46 @@ df -m (display currently mounted file systems and available disk space)
 
 Fill disk space + results observations
 
-dd 
+dd if=/dev/zero of=trashfile bs=$((1024*1024)) count=$((9*1024))
+	if - input file
+	of - output file
+	bs - block size of 1MB
+	count - number of blocks to copy (9, because df -g says 9GB blocks are available)
 
-Used up all inodes + results observations
+	[ 4735.8783884] /: write failed, file system is full
+	dd: trash: No space left on device
+	8876+0 records in
+	8875+0 records out
+	9306112000 bytes transferred in 144.522 secs (64392355 bytes/sec)
+
+	The system writes until there's no more room to write to, and prints the output like it would for any other file that dd would copy. I can log back into the instance through ssh just fine.
+
+ls -ls
+	total 9090252
+		2 -r--r--r--  2 root  wheel        1186 Jan 22 00:44 .cshrc
+		2 -rw-------  1 root  wheel          59 Jan 22 00:44 .klogin
+		2 -rw-r--r--  1 root  wheel         212 Jan 22 00:44 .login
+		2 -r--r--r--  2 root  wheel         702 Jan 22 00:44 .profile
+		2 -rw-r--r--  1 root  wheel         221 Jan 22 00:44 .shrc
+		2 drwxr-xr-x  2 root  wheel         512 Feb  7 21:12 .ssh
+	9090240 -rw-r--r--  1 root  wheel  9306112000 Feb  7 22:31 trash
+
+	That's a big file.
+
+Clear some space, use up all inodes + results observations
+
+rm trash
+
+x.sh
+	#!/bin/sh
+	i=0
+	while [ $i -le 1280769 ]; do
+			: > "$i.txt"
+			i=$((++i))
+	done
+
+	didn't work, takes too long to create each file
+
+dd if=/dev/zero of=master bs=1 count=1280770
+split -b 1 -a 10 master
+	this takes ages too...
