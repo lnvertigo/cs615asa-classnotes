@@ -227,4 +227,17 @@ x.sh
 # source: https://www.heatware.net/linux-unix/create-large-many-number-files-thousands-millions/
 dd if=/dev/zero of=master bs=1 count=1280770
 split -b 1 -a 10 master
+
 	>this takes ages too...
+	starting out i had 1280766 available inodes
+	after over 6 hours, i still have 885674 left
+	i even got "mail" during that time
+		"/var/mail/root": 2 messages 2 new
+		>N  1 root@ip-172-31-25-28  Mon Feb  8 04:19 58043/4075180 "ip-172-31-25-28.ec2.internal daily insecurity output for Mon Feb  8 04:15
+		N  2 root@ip-172-31-25-28  Mon Feb  8 04:19  20/1049  "ip-172-31-25-28.ec2.internal daily output for Mon Feb  8 04:15:17 UTC 2021"
+
+cp -r trash trash2
+
+	>going to try to just cp the files that i have for now, but at 18k inodes every minute it's going to take just as long to fill the remaining 870859 inodes...
+	>using tmux in conjunction with cp only made it even slower
+	
