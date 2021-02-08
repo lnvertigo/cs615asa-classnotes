@@ -170,20 +170,14 @@ fdisk (display partition table)
 	First active partition: 0
 	Drive serial number: 0 (0x00000000)
 
-	The disk is divided into a single partition, which contains the NetBSD OS, and only uses a fraction of the _total available size shown in total sectors._ not sure
+	>The disk is divided into a single partition, which contains the NetBSD OS, and only uses a fraction of the _total available size shown in total sectors._ not sure
 
 df
 	Filesystem      1K-blocks         Used        Avail %Cap Mounted on
 	/dev/xbd0a       10318062      1226112      8576048  12% /
 	ptyfs                   1            1            0 100% /dev/pts
 
-
-df -m (display currently mounted file systems and available disk space)
-	Filesystem   1M-blocks      Used     Avail %Cap Mounted on
-	/dev/xbd0a       10076      1197      8375  12% /
-	ptyfs                0         0         0 100% /dev/pts
-
-	-m display the sizes of disks as megabytes. df is the command for displaying free space, and displays all mounted file systems if no arguments are supplied.
+	>df is the command for displaying free space, and displays all mounted file systems if no arguments are supplied.
 
 
 Fill disk space + results observations
@@ -200,7 +194,7 @@ dd if=/dev/zero of=trashfile bs=$((1024*1024)) count=$((9*1024))
 	8875+0 records out
 	9306112000 bytes transferred in 144.522 secs (64392355 bytes/sec)
 
-	The system writes until there's no more room to write to, and prints the output like it would for any other file that dd would copy. I can log back into the instance through ssh just fine.
+	>The system writes until there's no more room to write to, and prints the output like it would for any other file that dd would copy. I can log back into the instance through ssh just fine.
 
 ls -ls
 	total 9090252
@@ -212,12 +206,14 @@ ls -ls
 		2 drwxr-xr-x  2 root  wheel         512 Feb  7 21:12 .ssh
 	9090240 -rw-r--r--  1 root  wheel  9306112000 Feb  7 22:31 trash
 
-	That's a big file.
+	>That's a big file.
 
 Clear some space, use up all inodes + results observations
 
 rm trash
+	>delete the file taking up the entire disk
 
+# source: https://stackoverflow.com/questions/34434157/posix-sh-syntax-for-for-loops-sc2039
 x.sh
 	#!/bin/sh
 	i=0
@@ -226,8 +222,9 @@ x.sh
 			i=$((++i))
 	done
 
-	didn't work, takes too long to create each file
+	>Used a for loop that iterated iAvail times, but it took too long. Learned that "POSIX shell/standards compliant" scripting exists now though, which is a plus.
 
+# source: https://www.heatware.net/linux-unix/create-large-many-number-files-thousands-millions/
 dd if=/dev/zero of=master bs=1 count=1280770
 split -b 1 -a 10 master
-	this takes ages too...
+	>this takes ages too...
