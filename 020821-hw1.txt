@@ -10,13 +10,13 @@ date
 
 	Sun Feb  7 21:48:24 UTC 2021
 
-w
+w (who's doing what?)
 
 	 9:48PM  up 36 mins, 1 user, load averages: 0.00, 0.00, 0.00
 	USER     TTY     FROM                                LOGIN@  IDLE WHAT
 	root     pts/0   pool-108-50-205-195.nwrknj.fios.ve  9:46PM     0 w 
 
-ifconfig -a
+ifconfig -a (network interfaces)
 
 	xennet0: flags=0x8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
         capabilities=0x17c00<TCP4CSUM_Rx,TCP4CSUM_Tx,UDP4CSUM_Rx,UDP4CSUM_Tx>
@@ -33,7 +33,7 @@ ifconfig -a
         inet6 ::1/128 flags 0x20<NODAD>
         inet6 fe80::1%lo0/64 flags 0 scopeid 0x2
 
-netstat -na
+netstat -na (network connections)
 
 	Active Internet connections (including servers)
 	Proto Recv-Q Send-Q  Local Address          Foreign Address        State
