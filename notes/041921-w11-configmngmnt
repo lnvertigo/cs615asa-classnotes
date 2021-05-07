@@ -1,0 +1,35 @@
+BEFORE
+===================
+LINK - https://www.atlassian.com/continuous-delivery/principles/configuration-management
+- Config management is a process that tracks configurations of assets in a IT system.
+
+- How in-depth can configuration management be at the lowest level? Can it manage OSes and settings like patches and personalizations?
+
+AFTER
+===================
+- push data from server to thousands of machines:
+	rsync can handle deploying a config among a bunch of devices.
+- each machine pulls data from server:
+- pub-sub model
+	server checks if changes are needed using checksums
+
+- an actual config mngmnt program
+	- puppet
+
+- sharable data
+- system specific files
+
+- different categories of configurations depending on many factors
+
+- CAP Theorem
+	- consistency
+	- availability
+	- partition tolerance
+		- the CM system doesn't break down when it can't update
+
+- idempotent
+	- f(f(x)) = f(x)
+	rm resolv.conf
+	echo "text" > file
+
+- I learned that managing files to be consistent throughout multiple systems gets extremely complicated when trying to account for so many variables that can cause conflicts as opposed to trying to copy/paste from a cloud or USB.

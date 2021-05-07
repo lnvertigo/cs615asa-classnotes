@@ -1,0 +1,1 @@
+"1","0.000000","2600:1f18:64d9:a100:1d6a:973e:f52b:adf9","2604:180:f1::92","ICMPv6","118","Echo (ping) request id=0x0005, seq=1, hop limit=255 (reply in 2)"

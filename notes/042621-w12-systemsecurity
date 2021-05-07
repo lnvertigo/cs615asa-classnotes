@@ -1,0 +1,21 @@
+BEFORE
+===================
+I took Intro to Cybersecurity with Professor Amoroso, and this topic is particularly interesting to me as I like valuing concepts like risk or understandability, which is a key part of risk assessment and management.
+
+- How much of the system's security does a system admin have to manage?
+- Is there a limit to how much security is mandatory for policy's sake?
+- Is there a set limit of security before users get aggravated that people have found out through experience?
+
+Watched some of the videos from the website:
+
+- Political intentions are just as integral to security policy as the policy themselves.
+- Assets can be abstract, like access or reputation, not just physical.
+
+Key takeaways:
+- Never waste resources on unspecified vague risks or FUD (fear, uncertainty, doubt).
+- Always remember that risks are scoped and specific.
+- Minimize risk by closing options (close atk vector/vulns), reducing the size of options (attack surface), and making it costly for attackers (eco of adversary).
+
+AFTER
+===================
+- Securing anything at a scale like that of a government entity is a LOT of politicking.

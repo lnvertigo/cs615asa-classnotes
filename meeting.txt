@@ -1,0 +1,174 @@
+Keynote: Baking Cysec into Enterprise IT
+
+	- C19 caused reshuffling of structures for all orgs.
+		- remote became viable
+	- C19 created new targets
+		- change in volumn and types
+		- orgs are shifting to cloud and needing to secure it
+	- C19 showed the lowest probs of risk of large scale disaster can still happen
+
+	- private sector
+		- more orgs differenciate on trust
+			- includes sharing info
+				- what trust is based on
+				- how trust is role in innovation
+				- how trust allows collab
+
+	- our prio to find balance betw security, privacy, growth
+
+	- set responsible policies and frameworks and processes
+		- shapes security for all
+
+	- last year: how can we provide more of that info on self-service basis?
+		- got more popular
+
+	2: guiding principles
+	- industry collab/progress didn't stop
+
+		- 1: to enable better comms, need to provide clarity on laws procedures or actions
+			- make sure incentives are there
+			- to engage in info sharing events/activities
+
+		- 2: provide access to trusted and valued indicators
+			- what's valuable, trusted, actual
+
+		- 3: provide opportunities to codesign solutions with stakeholders on actions they shoudl take, how to distinguish geniune reports, how to report events
+
+	back to trust
+		- what is trust
+			- value of doign business
+			- confidence that __ would be held
+
+		1: establish governence/policy frameworks, checking resilience, and they're being followed
+
+		culture of security and collab
+
+		2: reflect on how attacks change as time passes
+			shared responsbiliity
+			+ risk, + opportunity to secure apps, envs, and collab methods
+
+		incident count +
+		ransomeware +
+		top 5 targets were changed
+			retail
+			hospitality/healthcare
+		remote acces ssystems = attack vectors
+		healthcare +45% increase
+
+		cloud adoption surpassed prediction by nearly 5 years
+
+		cysec growth, hiring ppl with degrees, more women
+
+	collab increased betw providers AND *customers*
+
+	mobile devices for work
+		- became another attack vector
+		- another collab opportunity
+
+	customer expectations grew too
+
+	globally aligned architecture
+
+	slide 2 - resilience guiding principles
+		- people are most valuable asset
+		- transparency critical
+		- use risk-based approach
+		- security is crit business req
+		- automating security
+
+panel - Network Security for 2021 and Beyond
+	1: key challenges during covid
+		MEG DIAZ:
+			- cisco
+			- how threats changed
+			- few trends
+				- attackers took adv in pandemic and phished (40% increase)
+				- trojans and droppers getting "2nd life" as delivery
+		JOHN:
+			- took adv of __??__
+			- locked things down, expansive vpn
+			- didn't expand control at the same time, caused issues
+			- surface area of atk
+			- risk management measures vs business measures
+				- do whatever has to be done to get basic things to work
+		TIM:
+			- southeast - had everything set for remote bc of hurricanes
+				- still had a massive rush
+				- last min vpns with full stack access and untrusted devices
+			- RND budget increase proposal = unmanaged device count
+				- untunneled vpn
+				- unpatched boxes
+			- influx of lame malware attacks
+				- works because of unmanaged unpatched devices
+			- proves need to have a plan
+			- zero/verified trust
+		JEFF:
+			- bank: 50k concurrent users
+			- are firewalls good enough for this issue?
+	2: accel of SASE - secure access service edge
+		MEG:
+			- SASE got a kickstart since 2019
+		TIM:
+			- proper SASE = 
+				- question becomes: how to spin up VPN -> why spin up VPN?
+					- bc it was easy? bc everyone's familiar with it?
+			- rethink who gets fullstack access and why people get the rights they do
+		JOHN:
+			- data focused approach > tech focused approach
+			- big part of world still runs on legacy tech
+				- to what degree can we acommadite
+			- securty supports availability
+				- relax contrl for availability
+			- risk/tech based approach
+				- not as successful as legacy stuff
+			- are we solving problems? or are we creating new ones?
+			- once an endpoint had access to pt 80 and 443, sase didn't matter at all
+				- printers, phones, personal devices can't run new tech like crowdstrike
+		JEFF:
+			- hybrid
+				- legacy/secure access
+				- cloud/sase architecture
+				+ on-prem/private cloud/public cloud
+			- (2005) knack
+				- companies still don't know what's connected to their systemse
+				- get accurate inventory of legacy systems and find out how to brings those up to speed
+				- these gaps are the vulnerabilities that are hit the most
+		MEG: "how to bring old tech along as we converge to sase"
+			- sase is not 1 size fits all
+				- some locations might still need on prem
+				- some might need cloud
+			- sase still needs on prem a path to the cloud
+		JEFF:
+			- is there less traffic
+			- is there fewer attacks
+			- 2020 was very successul for firewall market
+			
+	3: reccomendations about netowrk security and how to approach/prioritize some of the threats (supply chain atks)
+		TIM: how you're prioing
+			- approach IDing the assets
+			- significant onprem harrdware
+			- treat that as diff problem to access problem
+			- divide them up as policy perspec in how assets are managed
+				- take local admin rights from endpoints
+				- leverage some cloud solutions to help deploy with patches, move pshl scripts to sujpport remote policies, take advntge of tools to secure prooperly
+			- need a way to insure a way to allow users to dl what they want and go to what site they want
+		JOHN:
+			- dist vs centralized computing
+			- netowrk always been core of convo
+			- what problem are they trying to solve?
+			- what do i care about and why?
+			- what are the high probability things, and what would it impact?
+			- pay attneiton to what hurts
+			- get the hygiene done b4 worrying about stuff like sase
+			- balance betw what works and what doesn't
+		JEFF:
+			- security vendors are a partner
+			- how do they cover legacy/modern systems/cloud/cloud delivery?
+				- what tools are being offered?
+		MEG:
+			- SASE could be so broad it'd be overwhelming
+			- go back for bases
+			- what are major use cases
+ending
+	JEFF:
+		- trust but verify

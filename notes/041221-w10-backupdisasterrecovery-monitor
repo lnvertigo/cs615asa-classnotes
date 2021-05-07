@@ -1,0 +1,11 @@
+BEFORE
+===================
+- regular backups are important, but could backups be a liability in themselves?
+- how important are offsite backups? could backups that are disconnected from the main site suffice?
+
+AFTER
+===================
+- logs of events (metrics) are key for identifying attacks as they occur or already occurred
+	- exec time, data src/dest, and hardware usage/uptime
+- context is KEY
+	- a spike in disk I/O during downtime would be different from a spike that occurs in a regular time period

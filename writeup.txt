@@ -1,0 +1,26 @@
+For my meetup, I attended the Interop Digital event on April 29, which was primarily centered around the future of cybersecurity and it's changing role in IT as the world adapts to going remote at a very fast pace.
+
+== SUMMARY ==
+Interop Digital hosted several panels, tech talks, and a keynote throughout the afternoon, and ranged from conversations about the future of authentication to better implementing security into various aspects of app development, be it DevOps or enterprise grade applications.
+
+== RELATES TO CLASS ==
+This meetup related to the course by primarily focusing around how systems administrators and security administrators should and could handle the new threats and challenges that they will face as corporations transition their systems into the local and remote clouds for remote work that was jumpstarted by the pandemic.
+
+-- KEYNOTE --
+The keynote was held by the Chief Trust Office at SAP, Elena Kvochko, and was titled "Baking Cybersecurity into Enterprise IT". She covered the guiding principles of a general policy structure for an organization and a set of general resiliency guiding principles through her slides. Her speech described the collaboration between security policies and the industry, and the importance of defining policies and trust with everyone involved in the industry in order to "enable better communications" and provide opportunities and access to trusted entities and stakeholders.
+
+-- PANEL --
+The panel I chose to attend due to how vague the keynote ended up being was Network Security for 2021 and Beyond. Four professionals, including the Cisco Cloud Security Product Marketing Director, discussed various topics, including:
+	- Key challenges they encountered while operating during COVID19
+	- Their thoughts on the acceleration of the adoption of SASE
+	- Recommendations on how to handle the newer network security threats that are rising in popularity
+
+This talk ended up being a lot more meaningful, as several of the panelists had their own stories about attacks they defended against and held discussions amongst each other.
+
+Their recommendations for handling risks were particularly substantive as they recommended dividing policy perspectives by their purpose, and to take inventory of all assets in a network and keep track of which are legacy and need to be brought up to snuff.
+
+== WHY I CHOSE IT ==
+The focus of the event, the fact that the event was free, and the sponsors/speakers presenting at the event were the biggest reasons why I chose Interop over others that were being held at the same time.
+
+== WHAT I LEARNED/TAKEAWAYS ==
+I learned about SASE, how difficult it can be to implement modern solutions like SASE, and how a network turning to the cloud and remote makes management more difficult and easier at the same time. It was interesting to listen to listen in on the discussions on network security between experts in cybersecurity, but the ideas presented were very broad and didn't go to far into lower level concepts. The tech talks that I sometimes witnessed were more advertisements and guides on how to utilize the tools being presented rather than cover how or why the network benefits from having the tool over forgoing it. I'd recommend this event for the sake that it was free and the panels are at most 30 minutes, but not for much else.
